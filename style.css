@@ -1,0 +1,862 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    font-size: 8px;
+    --font-size-tituloHome: clamp(2rem, 2vh + 0.3vw, 10rem);
+    --font-size-iconos-home: clamp(3rem, 3vh + 0.3vw, 10rem);
+    --font-size-Titulos: clamp(3rem, 3vh + 0.3vw, 10rem);
+    --font-size-titulosSecundarios: clamp(2.5rem, 2.5vh + 0.3vw, 10rem);
+    --font-size-textos: clamp(2rem, 2vh + 0.3vw, 10rem);
+    --font-size-iconos: clamp(4rem, 3vh + 0.3vw, 10rem);
+    --barra-habilidades-longitud: 0%;
+}
+
+body{
+    background-image: url(/ProyectoCV/Imagenes/fondo2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(218, 227, 229);
+}
+
+.cotenedorPrincipal{
+    width: 100%;
+    padding: 8% 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(1, 1, 15, 0.5), rgba(12, 27, 51, 0.3) ) ,url(/ProyectoCV/Imagenes/fondo3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+}
+
+/* ----------> Dando estilos a la barra de navegacion y sus contenidos */
+
+.contenedorBarraMenu{
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(4, 8, 15, 0.5));
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.logo{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-size: var(--font-size-iconos-home);
+    font-weight: bolder;
+    padding-right: 150px;
+}
+
+.linkLogo{
+    text-decoration: none;
+    color: rgb(218, 227, 229);
+}
+
+.contenedorNavegador{
+    background-color: rgb(4, 8, 15);
+    width: 50%;
+    z-index: 98;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.8s ease;
+
+    /* display: none; */
+}
+
+.activo{
+    transform: translateY(-150%);
+}
+
+.contenedorNavegador .listaNavMenu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-top: 15rem;
+    gap: 30px;
+}
+
+.listaNavMenu .itemListaNav{
+    width: 100%;
+    color: rgb(218, 227, 229);
+    font-size: var(--font-size-textos);
+}
+
+.itemLinkNavegador{
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(240, 242, 239);
+}
+
+.itemLinkNavegador:hover{
+    background-color: rgb(56, 163, 165);
+    transition: all 0.5s ease-in-out;
+}
+
+.contenedorBotonHamburguesa{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    font-size: var(--font-size-iconos-home);
+    color: rgb(56, 163, 165);
+    padding-left: 150px;
+}
+
+.contenedorBotonHamburguesa i{
+    cursor: pointer;
+}
+
+/* ----------> Dando estilos al home de la pagina */
+
+.contenedorHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 90rem;
+}
+
+.fotoPerfilUno{
+    height: auto;
+    position: relative;
+    top: 5rem;
+}
+
+.fotoPerfilUno img{
+    width: 300px;
+    padding: 3%;
+    border-top: 1px solid rgb(56, 163, 165);
+    border-left: 1px solid rgb(56, 163, 165);
+}
+
+.textoPrincipal{
+    background-color: rgba(4, 8, 15, 0.3);
+    width: 100%;
+    height: 8rem;
+    position: relative;
+    top: 8%;
+    font-size: var(--font-size-tituloHome);
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----------> Dando estilos a las redes sociales */
+
+.contenedorRedes{
+    background-color: rgba(4, 8, 15, 0.3);
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 12%;
+}
+
+.listaRedesSociales{
+    width: 50%;
+    font-size: var(--font-size-iconos);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.itemListaRedes{
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itemLinkRedes{
+    text-decoration: none;
+    color: rgb(240, 242, 239);
+}
+
+.itemLinkRedes i:hover{
+    background: rgba(56, 163, 165, 0.5);
+    color: rgb(1, 1, 8);
+    border-radius: 100%;
+    padding: 10px;
+    transition: all 0.8s;
+}
+
+/* ----------> Dando estilos a la parte "Sobre Mí" - Textos y foto de perfil a color */
+
+.contenedorSobreMi{
+    background-color: rgb(4, 8, 15);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8% 0;
+}
+
+.sobreMiTitulo{
+    width: 90%;
+    font-size: var(--font-size-Titulos);
+}
+
+.informacionSobreMi{
+    width: 90%;
+    color: rgb(218, 227, 229);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10%;
+}
+
+.textoSobreMi{
+    font-size: var(--font-size-textos);
+    font-weight: lighter;
+    flex: 1;
+}
+
+.fotoPerfilDos{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fotoPerfilDos img{
+    width: 200px;
+    padding: 2rem;
+    border-right: 1px solid rgb(56, 163, 165);
+    border-bottom: 1px solid rgb(56, 163, 165);
+}
+
+/* ----------> Dando estilos a la parte de "Datos Personales" */
+
+/* Abajo dos clases generales que uso para alguno de los contenidos */
+
+.secciones{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+
+.titulo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 4%;
+}
+
+/* ------------     ----------     ---------     ----------      --------- */
+
+.contenedorDatosPersonales{
+    background-color: rgba(4, 8, 15, 0.8);
+}
+
+.datosPersonalesTitulo{
+    width: 90%;
+    font-size: var(--font-size-Titulos);
+}
+
+.listasDatosPersonales{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    padding: 4% 0;
+}
+
+.datos{
+    list-style: none;
+}
+
+.rellenarDatos .itemListaDatos{
+    font-size: var(--font-size-textos);
+    padding: 8% 0;
+}
+
+.datosRellenados .itemListaDatos{
+    font-size: var(--font-size-textos);
+    padding: 4% 0;
+}
+
+
+/* ----------> Dando estilos a la parte de "Mis intereses" */
+
+.contenedorMisIntereses{
+    color: rgb(218, 227, 229);
+    background-color: rgba(4, 8, 15, 0.8);
+}
+
+.bordeCuatroTitulo{
+    width: 10%;
+    left: 5%;
+}
+
+.misInteresesTitulo{
+    font-size: var(--font-size-Titulos);
+}
+
+.contenedorItemIntereses{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.listaMisIntereses{
+    width: 100%;
+    padding: 8% 0;
+    font-size: var(--font-size-textos);
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.itemMisIntereses{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+}
+
+.linkMisIntereses{
+    text-decoration: none;
+    color: rgb(218, 227, 229);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 70px;
+    background-color: rgba(218, 227, 229,0.5);
+    border-radius: 8px;
+}
+
+.itemMisIntereses .linkMisIntereses:hover{
+    background: rgba(4, 8, 15, 0.5);
+    color: rgb(56, 163, 165);
+    padding: 10px;
+}
+
+.linkMisIntereses i{
+    font-size: var(--font-size-iconos);
+}
+
+/* ----------> Dando estilos a la parte de "Habilidades Tecnicas" */
+
+.contenedorHabilidadesTecnicas{
+    color: rgb(218, 227, 229);
+    background-color: rgb(4, 8, 15);
+}
+
+.habilidadesTitulo{
+    font-size: var(--font-size-Titulos);
+}
+
+.habilidadesTecnicasProfecionalesTitulo{
+    background-color: rgba(56, 163, 165, 0.8);
+    width: 40%;
+    margin: 6% 0;
+    font-size: var(--font-size-titulosSecundarios);
+    position: relative;
+    right: 25%;
+}
+
+/* estilos del contenido de las habilidades tecnicas */
+
+.habilidades{
+    width: 90%;
+}
+
+.habilidadesItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 3%;
+}
+
+.habildadesTecnicas{
+    flex: 1;
+    width: 50%;
+    font-size: var(--font-size-textos);
+}
+
+.habilidadesBarra, .habilidadesBarra::after{
+    flex: 1;
+    position: relative;
+    width: 100%;
+    height: 15px;
+    background-color: rgba(218, 227, 229, 0.8);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.habilidadesBarra::after{
+    content: "";
+    position: absolute;
+    left: -100%;
+    background-color: rgb(56, 163, 165);
+    transition: 0.1s, backgroun-color 0.2s ease-in-out;
+    animation: deslizarBarraHabilidades 2s ease-in-out forwards;
+}
+
+.habildadesBarra70::after{
+    --barra-habilidades-longitud:70%;
+}
+
+.habildadesBarra80::after{
+    --barra-habilidades-longitud:80%;
+}
+
+.habildadesBarra90::after{
+    --barra-habilidades-longitud:90%;
+}
+
+.habildadesBarra100::after{
+    --barra-habilidades-longitud:100%;
+}
+
+@keyframes deslizarBarraHabilidades{
+    to{
+        transform: translateX(var(--barra-habilidades-longitud));
+    }
+}
+
+/* ----------> Dando estilos a la parte de "Habilidades Profecionales" */
+
+.contenedorHabilidadesProfecionales{
+    color: rgb(218, 227, 229);
+    background-color: rgb(4, 8, 15);
+}
+
+.habildadesProfecionales{
+    flex: 1;
+    width: 50%;
+    font-size: var(--font-size-textos);
+}
+
+/* ----------> Dando estilos a la parte de educacion alcanzada*/
+
+.contenedorEducacionExperiencia{
+    color: rgb(218, 227, 229);
+    background-color: rgba(4, 8, 15, 0.8);
+}
+
+.educacionExperienciaTitulo{
+    font-size: var(--font-size-Titulos);
+}
+
+.educacionExperienciaAlcanzada{
+    width: 90%;
+    border-left: 1px solid rgb(56, 163, 165);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 5%;
+}
+
+.educacionAlcanzada{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.educacionAlcanzada p{
+    background-color: rgba(56, 163, 165, 0.8);
+    font-size: var(--font-size-titulosSecundarios);
+}
+
+.educacionAlcanzada h2{
+    font-size: var(--font-size-textos);
+    font-weight: lighter;
+} 
+
+/* ----------> Dando estilos a la parte de "Experiencias" */
+
+.experienciaAlcanzada{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.experienciaAlcanzada p{
+    background-color: rgba(56, 163, 165, 0.8);
+    font-size: var(--font-size-titulosSecundarios);
+}
+
+.experienciaAlcanzada h2{
+    font-size: var(--font-size-textos);
+    font-weight: lighter;
+} 
+
+.listaExperiencia{
+    list-style-type: circle;
+    padding-top: 5%;
+    font-size: var(--font-size-textos);
+    font-weight: lighter;
+}
+
+.logrosTitulo{
+    font-size: var(--font-size-titulosSecundarios);
+    border-bottom: 1px solid rgb(56, 163, 165);
+    padding: 4% 0;
+}
+
+.listaLogros{
+    list-style-type: circle;
+    font-size: var(--font-size-textos);
+    font-weight: lighter;
+}
+
+/* ----------> Dando estilos a la parte de "Portfolio" */
+
+.contenedorTrabajos{
+    background-color: rgb(4, 8, 15);
+}
+
+.trabajoTitulo{
+    font-size: var(--font-size-titulosSecundarios);
+}
+
+.contenedorCarrusel{
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carruselDeTrabajos{   
+    display: flex;
+    width: 600%;
+    height: 300px;
+    margin-left: -100%;
+}
+
+.trabajo{
+    width: 100%;
+    display: flex;
+}
+
+.imagenCarrusel{
+    display: block;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+}
+
+.textoCarrusel{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 5%;
+    font-size: var(--font-size-textos);
+}
+
+.botones{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 50px;
+}
+
+.botonCarrusel{
+    width: 40px;
+    height: 40px;
+    color: rgb(56, 163, 165);
+    border-radius: 100%;
+    text-align: center;
+    font-size: var(--font-size-titulosSecundarios);
+    font-weight: bolder;
+    box-shadow: 0 15px 50px rgb(0, 0, 0);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.botonCarrusel:hover{
+    background-color: rgba(56, 163, 165,0.5);
+    color: rgb(218, 227, 229);
+}
+
+.botonDerecha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botonIzquierda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ----------> Dando estilos a la parte de "Contacto" */
+
+.contenedorContacto{
+    padding: 6% 0;
+    color: rgb(218, 227, 229);
+    background-color: rgba(4, 8, 15, 0.8);
+}
+.contactoTitulo{
+    font-size: var(--font-size-titulosSecundarios);
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(4, 8, 15, 0.8);
+}
+
+/* estilos del contenedor del Formulario */
+
+.contenedorFormularioContacto{
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+    margin: 4% 0;
+    padding: 4% 0;
+    background-color: rgba(4, 8, 15, 0.8);
+    display: flex;
+    justify-content: center;
+}
+
+.formulario{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario label{
+    width: 50%;
+    font-size: 1.8rem;
+    font-family: 'Noto Sans', sans-serif;
+
+}
+
+.formulario input{
+    background-color: rgba(218, 227, 229, 0.3);
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 2%;
+    width: 50%;
+    height: 30px;
+    font-size: 1.8rem;
+    color: rgb(218, 227, 229);
+}
+
+/* estilos del area de texto del mensaje */
+
+.areaMensaje{
+    width: 50%;
+    margin: 2% 0 6% 0;
+}
+
+.areaMensaje h2{
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding-bottom: 1%;
+}
+
+textarea{
+    background-color: rgba(218, 227, 229, 0.3);
+    color: rgb(218, 227, 229);
+    font-size: 1.8rem;
+    border-radius: 5px;
+    resize: none;
+    width: 100%;
+    height: 100px;
+}
+
+/* estilos del boton enviar mensaje */
+
+#botonEnviar{
+    background-color: rgba(56, 163, 165, 0.8);
+    height: 40px;
+    transition: all 0.8s;
+    cursor: pointer;
+}
+
+#botonEnviar:hover{
+    background-color: rgb(4, 8, 15);
+    color: rgb(56, 163, 165);
+}
+
+/* estilos de las redes sociales, repitiendo las de la pagina principal */
+
+.contenedorRedesContacto{
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* nombre de mia galiano al final del CV */
+
+.contenedorNombre{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.contenedorNombre h2{
+    font-size: var(--font-size-titulosSecundarios);
+}
+
+
+/* -------------------- Empezando la parte del media querie del CV -------------------- */
+
+/* Mediaquery 1000px */
+
+@media screen and (min-width: 1000px){
+
+    /* estilos del contenedor principal - que contiene las redes sociales y al home */
+
+    .cotenedorPrincipal{
+        width: 50%;
+        position: fixed;
+    }
+    /* ----------> Dando estilos a la barra de navegacion y sus contenidos */
+
+    .contenedorBarraMenu{
+        width: 50%;
+    }
+
+    .contenedorNavegador{
+        right: 50%;
+        overflow: auto;
+    /* display: none; */
+    }
+
+    .contenedorNavegador .listaNavMenu{
+        padding-top: 10rem;
+        gap: 10px;
+    }
+
+    .listaNavMenu .itemListaNav{
+        width: 100%;
+        color: rgb(218, 227, 229);
+        font-size: var(--font-size-textos);
+    }
+
+    .itemLinkNavegador{
+        transition: all 0.5s ease-in-out;
+    }
+
+    /* ----------> Dando estilos al home de la pagina */
+    .contenedorHome{
+        position: relative;
+        top: -8rem;
+    }
+
+    .fotoPerfilUno img{
+        width: 200px;
+    }
+
+    .textoPrincipal{
+        font-size: var(--font-size-textos);
+    }
+
+    .contenedorSecciones{
+        width: 50%;
+        position: relative;
+        left: 50%;
+    }
+
+    /* ----------> Dando estilos a la parte "Sobre Mí" - Textos y foto de perfil a color */
+
+    .contenedorSobreMi{
+        background-color: rgb(4, 8, 15);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 8% 0;
+    }
+
+    .sobreMiTitulo{
+    width: 90%;
+    font-size: var(--font-size-Titulos);
+    }
+
+    .informacionSobreMi{
+    width: 90%;
+    color: rgb(218, 227, 229);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10%;
+    }
+
+    .textoSobreMi{
+    font-size: var(--font-size-textos);
+    font-weight: lighter;
+    flex: 1;
+    }
+
+    .fotoPerfilDos{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .fotoPerfilDos img{
+    width: 200px;
+    padding: 2rem;
+    border-right: 1px solid rgb(56, 163, 165);
+    border-bottom: 1px solid rgb(56, 163, 165);
+    }
+
+    .contenedorDatosPersonales{
+        background-color: rgb(4, 8, 15);
+    }
+
+    .contenedorMisIntereses{
+        background-color: rgb(4, 8, 15);
+    }
+
+    .contenedorEducacionExperiencia{
+        background-color: rgb(4, 8, 15);
+    }
+
+    .contenedorContacto{
+        background-color: rgb(4, 8, 15);
+    }
+}
+
