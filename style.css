@@ -20,7 +20,7 @@ html{
 }
 
 body{
-    background-image: url(/ProyectoCV/Imagenes/fondo2.jpg);
+    background-image: url(/Imagenes/fondo2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,7 +32,7 @@ body{
 .cotenedorPrincipal{
     width: 100%;
     padding: 8% 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(1, 1, 15, 0.5), rgba(12, 27, 51, 0.3) ) ,url(/ProyectoCV/Imagenes/fondo3.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(1, 1, 15, 0.5), rgba(12, 27, 51, 0.3) ) ,url(/Imagenes/fondo3.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: bottom;
